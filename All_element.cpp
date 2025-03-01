@@ -8,6 +8,20 @@
 #include<string>
 using namespace std;
 
+//is a number is prime or not
+bool isPrime(long long int n) {
+    if (n < 2) return false;
+    if (n == 2 || n == 3) return true;
+    if (n % 2 == 0 || n % 3 == 0) return false;
+    
+    for (int i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) return false;
+    }
+    
+    return true;
+}
+
+
 //for factorial
 long long int fact(long long int a){
     if(a==1){return 1;}
